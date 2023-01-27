@@ -1,3 +1,75 @@
 <button (click)="this.peticion()">
   clic aqui
 </button>
+
+<form [formGroup]="form">
+
+  <div class="col-md-12">
+    <div class="row">
+      <div class="col-4">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title">Gestion de macros</div>
+            <div class="card-title">Cargar archivo</div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend" *ngIf="this.form.valid">
+                <button (click)="this.onUploadMacro()" id="inputGroupFileAddon01">Firmar</button>
+              </div>
+              <div class="custom-file">
+                <input type="file" formControlName="archivo" style="margin-top: 3px;margin-left: 10px;"
+                  (change)="onChange($event)" class="custom-file-input" id="inputGroupFile01"
+                  aria-describedby="inputGroupFileAddon01">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-2">
+
+        <div class="card" style="height: 250px;">
+          <div class="card-body">
+            <p>E-mail</p>
+            <input type="text" formControlName="email" style="margin-top: 3px;margin-left: 10px;"
+              class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+            <p>Nombre del responsable</p>
+            <input type="text" formControlName="nombreResponsable" style="margin-top: 3px;margin-left: 10px;"
+              class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+            <p>Vice presidencia</p>
+            <select class="form-control" formControlName="vicepresidencia" style="margin-top: 3px;margin-left: 10px;"
+              class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
+              <option>VP_AML</option>
+              <option>VP_AUDITORIA</option>
+              <option>VP_DIGITAL</option>
+              <option>VP_FINANCIERA</option>
+              <option>VP_OPERACIONES</option>
+              <option>VP_RETAIL</option>
+              <option>VP_RIESGOS</option>
+              <option>VP_SEGMENTOS</option>
+              <option>VP_TECNOLOGIA</option>
+              <option>VP_WEALTH</option>
+              <option>VP_WHOLESALE</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="col-6">
+        <!-- <div class="card">
+                      <div class="card-body">
+                          <div class="card-title">Instruccion de carga</div>                    
+                          <div class="input-group mb-3">
+                              <div class="input-group-prepend">
+                                  <label>Para realizar la carga del archivo, se debe tener presente el archivo base, ya que con este es que se realiza la asociación y distribución de las relaciones dentro del aplicativo, si el archivo que se carga no concuerda con la estructura base, la información que se presente dentro del sistema será errónea y generara problemas dentro del aplicativo.</label>
+                              </div>                   
+                          </div>                    
+                      </div>
+                  </div> -->
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+</form>
